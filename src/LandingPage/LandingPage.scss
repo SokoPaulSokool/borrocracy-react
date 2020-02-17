@@ -1,0 +1,621 @@
+
+@import "../mystyles/mixinsCollection/juice/juice";
+// @import url(https://fonts.googleapis.com/css?family=Asap:400,400i,600,700&display=swap);
+// @import url(https://fonts.googleapis.com/css?family=BenchNine&display=swap);
+// @import url(https://fonts.googleapis.com/css?family=Montserrat+Alternates:100,200,200i,400,500, 500i,700,900&display=swap);
+// @import url(https://fonts.googleapis.com/css?family=Gothic+A1:100,200,300,400,500,600,700,800,900&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Noto+Serif:400,800&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap);
+
+$primary-background: #003a78;
+$primary-secondary: #ff9800;
+$primary-accent: #eeff41;
+$mid-bp: 767px;
+// $mid-bp: small;
+// $font-stack: 'Asap', sans-serif;
+// $font-stack: 'BenchNine', sans-serif;
+// $font-stack: 'Montserrat Alternates', sans-serif;
+
+// $font-stack: "Gothic A1", sans-serif;
+$font-stack: "Montserrat", sans-serif;
+$font-stack-noto-serif: "Noto Serif", serif;
+
+
+
+.view {
+  background-image: url('https://mdbootstrap.com/img/Photos/Others/images/89.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
+
+#contactformpage h6 {
+  line-height: 1.7;
+}
+
+#contactformpage .form-check {
+  margin-bottom: 0!important;
+}
+
+#contactformpage i {
+  color: #9e9e9e!important;
+}
+
+
+
+
+
+
+
+hr {
+  color: $primary-secondary;
+  background: $primary-secondary;
+}
+
+.items-group {
+  margin-top: 100px;
+  @include bp(max, $mid-bp) {
+    margin-top: 80px;
+  }
+}
+
+.vanish {
+  display: none !important;
+}
+
+.vanishNot {
+  display: flex !important;
+}
+
+.home-views {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  min-height: 90vh;
+}
+
+.full-view {
+  width: 100vw;
+  min-height: 90vh;
+  position: relative;
+  @include bp(max, $mid-bp) {
+    min-height: 60vh;
+  }
+}
+.hero {
+  display: flex;
+
+  &-text {
+    height: 30%;
+    width: 100%;
+    align-self: center;
+    color: $primary-background;
+    position: relative;
+    display: block;
+    .main-heading {
+      width: 100%;
+      // height: 220px;
+      h1 {
+        font-size: 10em;
+        line-height: 1em;
+        // position: absolute;
+        // text-shadow: 0 10px 5px rgba(0,0,0,0.3);
+        transition: all 0.2s ease-in-out;
+        transform: scale(1);
+
+        &:nth-child(1) {
+          font-size: 2.5em;
+          line-height: 0.8em;
+          text-indent: 0.2em;
+          font-weight: lighter;
+        }
+        &:nth-child(2) {
+          text-shadow: 0 10px 5px rgba(0, 0, 0, 0.3);
+          font-family: $font-stack-noto-serif;
+        }
+        &:hover {
+          &:nth-child(2) {
+            transform: scale(0.99);
+            text-shadow: 0 10px 5px rgba(0, 0, 0, 0);
+          }
+        }
+        @include bp(max, $mid-bp) {
+          font-size: 3.5em;
+        }
+      }
+    }
+
+    h1 {
+      font-size: 70px;
+    }
+    p {
+      color: #343638;
+      font-style: oblique;
+      font-weight: 400;
+      line-height: 0.6em;
+    }
+  }
+  &-image {
+    width: 50%;
+    height: 60%;
+    position: relative;
+    background: url("../assets/images/hero_image-01.svg");
+    img {
+      object-fit: contain;
+      height: 100%;
+      width: 100%;
+    }
+    @include bp(max, $mid-bp) {
+      height: 70%;
+      width: 90%;
+      z-index: -1;
+      img {
+        position: absolute;
+        right: 10px;
+      }
+    }
+  }
+  &-auth {
+    position: absolute;
+    border-radius: 10px;
+    width: 50%;
+    min-height: 30%;
+    bottom: 1%;
+    right: 1%;
+
+    p {
+      color: white;
+    }
+    .container {
+      height: 100%;
+      position: relative;
+      background-color: $primary-background;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+    .g-play {
+      width: 100%;
+      height: 40%;
+      object-fit: contain;
+      display: flex;
+      img {
+        object-fit: contain;
+        // height: 100px;
+        cursor: pointer;
+      }
+
+      @include bp(max, $mid-bp) {
+        img {
+          // height: 100%;
+        }
+      }
+    }
+
+    @include bp(max, $mid-bp) {
+      width: 90%;
+      min-height: 50%;
+    }
+  }
+}
+
+.second-view {
+  //  background: url("../../assets/images/kool-curve-02.svg");
+  position: relative;
+  background-size: 50%;
+  background-position: center -30%;
+  background-repeat: no-repeat;
+  object-fit: contain;
+
+  min-height: 60vh;
+
+  .back-accent {
+    position: absolute;
+    width: 70%;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  h1 {
+    color: $primary-background;
+  }
+  .cards {
+    height: 300px;
+
+    .read-more {
+      display: none;
+      @include bp(medium) {
+        display: block;
+        background: #ffffff;
+        margin: 10px 0;
+        padding: 0px 10px;
+        border-radius: 10px;
+      }
+    }
+    .card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+
+      &__front {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transform: perspective(160em) rotateY(-20deg) translateZ(1em);
+        background: $primary-background;
+        box-shadow: 0px 12px 10px 1px rgba(0, 0, 255, 0.2);
+        backface-visibility: hidden;
+        transition: all 0.8s ease;
+        div:first-of-type {
+          width: 180px;
+          height: 180px;
+          padding: 10px;
+          display: flex;
+          border-radius: 50%;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          h5 {
+            color: $primary-background;
+          }
+        }
+      }
+      &__back {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        // background: rgba(0, 0, 0, 0.09);
+        border: 1px solid $primary-secondary;
+        backface-visibility: hidden;
+        transform: rotateY(-180deg);
+        transition: all 0.8s ease;
+        p {
+          // color: $primary-background;
+        }
+      }
+    }
+    &:hover {
+      .card {
+        &__front {
+          background: #ffffff;
+          border: 1px solid $primary-secondary;
+          transform: rotateY(180deg);
+        }
+        &__back {
+          transform: rotateY(0deg);
+        }
+      }
+    }
+  }
+}
+
+.third-view {
+  // background: url("../../assets/images/kool-curve-01.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  position: relative;
+  display: block;
+  padding: 10px;
+
+  .strip {
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    top: 50%;
+    background: rgba(#b8cdbc, 0.3);
+    transform: translateY(-50%);
+  }
+
+  .back-img {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 95%;
+    height: 95%;
+    object-fit: contain;
+    left: 40%;
+    top: 45%;
+    transform-origin: center;
+    transform: translate(-50%, -50%);
+
+    @include bp(max, $mid-bp) {
+      object-fit: cover;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      transform-origin: center;
+      transform: translate(-50%, -50%) scale(1.2);
+    }
+  }
+
+  @include bp(max, $mid-bp) {
+    background-size: cover;
+    display: flex;
+    align-items: center;
+  }
+  h2 {
+    color: $primary-accent;
+    margin-bottom: 20px;
+  }
+  p {
+    color: #ffffff;
+  }
+  .all {
+    position: absolute;
+    top: 18%;
+    left: 16%;
+    width: 60%;
+    .how {
+      display: flex;
+      flex-direction: column;
+      width: 95%;
+    }
+
+    .how-group {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      p {
+        color: #ffffff;
+        background: $primary-secondary;
+        padding: 0 10px;
+        border-radius: 30px;
+        border: 1px solid #ffffff;
+      }
+    }
+
+    @include bp(max, $mid-bp) {
+      width: 100%;
+      position: relative;
+      left: unset;
+      padding-top: 80px;
+      .how {
+        width: 100%;
+      }
+      .how-group {
+        flex-direction: column;
+        &:nth-child(2) {
+          // flex-direction: column-reverse;
+        }
+      }
+    }
+  }
+  .circle {
+    width: 110px;
+    height: 110px;
+    background: #ffffff;
+    border-radius: 50%;
+    transition: all 0.3s;
+    border: 1px solid #ffffff;
+    transform: scale(1.3) translateX(-10px);
+    &-1 {
+      background: url("../assets/images/step1.jpg") no-repeat;
+      background-size: cover;
+    }
+    &-2 {
+      background: url("../assets/images/step2.jpg") no-repeat;
+      background-size: cover;
+    }
+    &-3 {
+      background: url("../assets/images/step3.jpg") no-repeat;
+      background-size: cover;
+    }
+
+    @include bp(max, $mid-bp) {
+      transform: scale(1.1) translateX(-10px);
+    }
+    &:hover {
+      border: 2px solid #ffffff;
+      transform: scale(1);
+    }
+    @include bp(max, $mid-bp) {
+      width: 90px;
+      height: 90px;
+    }
+    @include bp(max, 408px) {
+      // width: 60px;
+      // height: 60px;
+    }
+  }
+}
+
+.fourth-view {
+  min-height: 70vh;
+  .row {
+    background: linear-gradient(100deg, $primary-background 50%, #ffffff 50%);
+
+    @include bp(max, $mid-bp) {
+      background: linear-gradient(180deg, $primary-background 50%, #ffffff 50%);
+    }
+    & > div {
+      min-height: 60vh;
+      @include bp(max, $mid-bp) {
+        min-height: 40vh;
+      }
+    }
+  }
+
+  p {
+    color: $primary-background;
+  }
+  .hand-shake {
+    transition: all 0.4s ease-in-out;
+    min-height: 40%;
+    &:hover {
+      transform: rotateY(20deg);
+    }
+  }
+  ul {
+    li {
+      border: 1px solid #ffffff;
+      padding: 5px 8px;
+      margin: 10px 0px;
+      // color: $primary-accent;
+      transition: all 0.5s ease-in;
+      &:hover {
+        border: 1px solid $primary-accent;
+        color: #ffffff;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+.fifth-view {
+  h1 {
+    color: $primary-background;
+  }
+  .squares-group {
+    ul {
+      margin-left: 20px;
+      position: relative;
+      height: 300px;
+      margin: 0 auto;
+
+      .squares {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border: 10px solid;
+        transition: all 0.4s;
+        background: white;
+        &:hover {
+          transform: scale(5);
+          background: #7baee4;
+        }
+        @include bp(max, $mid-bp) {
+          width: 160px;
+          height: 160px;
+        }
+      }
+
+      li {
+        &:nth-child(1) {
+          border-color: $primary-background;
+          transform: rotateZ(50deg);
+          animation-name: squareAnimation1;
+          animation-duration: 5s;
+          animation-iteration-count: infinite;
+          animation-direction: alternate-reverse;
+          animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        &:nth-child(2) {
+          border-color: $primary-secondary;
+          transform: translateY(50px) rotateZ(50deg);
+          animation-name: squareAnimation2;
+          animation-duration: 3s;
+          animation-iteration-count: infinite;
+          animation-direction: alternate-reverse;
+          animation-delay: 0.5s;
+          animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        &:nth-child(3) {
+          border-color: $primary-background;
+          transform: translateY(100px) rotateZ(50deg);
+          animation-name: squareAnimation3;
+          animation-duration: 6s;
+          animation-iteration-count: infinite;
+          animation-direction: alternate-reverse;
+          animation-delay: 0.3s;
+          animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+      }
+    }
+  }
+}
+
+@keyframes squareAnimation1 {
+  0% {
+    transform: translateY(0px) rotateZ(50deg);
+  }
+  100% {
+    transform: translateY(-15px) rotateZ(50deg);
+  }
+}
+@keyframes squareAnimation2 {
+  0% {
+    transform: translateY(50px) rotateZ(50deg);
+  }
+  100% {
+    transform: translateY(35px) rotateZ(50deg);
+  }
+}
+
+@keyframes squareAnimation3 {
+  0% {
+    transform: translateY(100px) rotateZ(50deg);
+  }
+  100% {
+    transform: translateY(85px) rotateZ(50deg);
+  }
+}
+
+.sixth-view {
+  background: $primary-background;
+  h1 {
+    color: #ffffff;
+  }
+  .card {
+    height: 300px;
+    width: 22%;
+  }
+  p {
+    color: $primary-accent;
+  }
+  ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    li {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        // object-position: 10%;
+      }
+      h5 {
+        color: white;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+        transform: translate(-50%, -50%);
+      }
+
+      .cover {
+        width: 100%;
+        height: 30%;
+        background: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    @include bp(max, $mid-bp) {
+      // flex-direction: column;
+      .card {
+        width: 40%;
+      }
+    }
+    @include bp(max, 500px) {
+      // flex-direction: column;
+      .card {
+        width: 80%;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 872.88 607.83">
+ <defs>
+  <style>.cls-1{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3{fill:#b8cdbc3f;}</style>
+  <clipPath id="clip-path">
+   <path class="cls-1" d="M-74.85,412.54c-76.68,157.79-210.5,232.26-445.48,262.72C-747,704.64-856.49,546.89-929.92,412.54c-84.14-154,171.34-183.31,427.54-317.67C-293.27-14.79,29.05,198.77-74.85,412.54Z" />
+  </clipPath>
+ </defs>
+ <title>kool-curve</title>
+ <g class="cls-2">
+  <image width="1200" height="584" transform="translate(-1118.67 54.08) scale(1.15)" xlink:href="../Downloads/background-borrocracy.png" />
+ </g>
+ <path class="cls-3" d="M23.72,340.67C96.8,494.29,226,567.59,453.56,599c219.51,30.33,327-121.75,399.3-251.43C935.7,199,688.2,168.47,440.87,36.11,239-71.92-75.29,132.54,23.72,340.67Z" />
+</svg>

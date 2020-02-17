@@ -1,0 +1,173 @@
+//@import "~sass-list-maps";
+$faint-text :#878787;
+$cc:#3e467b;
+$color-green: mat-palette($mat-green);
+$color-light-green: mat-palette($mat-light-green);
+$color-yellow:mat-palette($mat-yellow);
+$color-orange:mat-palette($mat-orange);
+$color-red:mat-palette($mat-red);
+.primary-bg-color {
+    background-color: mat-color($borrocracy-primary);
+}
+
+.accent-bg-color {
+    background-color: mat-color($borrocracy-accent);
+}
+
+.blue-bg-color {
+    background-color: #255ba2
+}
+
+.blue-bg-color2 {
+    background-color: #3e467b
+}
+
+.very-high-score-color {
+    background-color: mat-color($color-green);
+}
+
+.high-score-color {
+    background-color: mat-color($color-light-green);
+}
+
+.medium-score-color {
+    background-color: mat-color($color-yellow);
+}
+
+.low-score-color {
+    background-color: mat-color($color-orange);
+}
+
+.very-low-score-color {
+    background-color: mat-color($color-red);
+}
+
+.very-high-score-text {
+    color: mat-color($color-green);
+}
+
+.high-score-text {
+    color: mat-color($color-light-green);
+}
+
+.medium-score-text {
+    color: mat-color($color-yellow);
+}
+
+.low-score-text {
+    color: mat-color($color-orange);
+}
+
+.very-low-score-text {
+    color: mat-color($color-red);
+}
+
+$accent: A200;
+$primary: 600;
+// $colors-mat: (
+//   'red' : $mat-red,  'pink' : $mat-pink, 'purple' : $mat-purple, 'deep-purple' : $mat-deep-purple,
+//   'indigo' : $mat-indigo,  'blue' : $mat-blue, 'light-blue' : $mat-light-blue, 'cyan' : $mat-cyan,
+//   'teal' : $mat-teal,  'green' : $mat-green, 'light-green' : $mat-light-green, 'lime' : $mat-lime,
+//   'yellow' : $mat-yellow,  'amber' : $mat-amber, 'orange' : $mat-orange, 'deep-orange' : $mat-deep-orange,
+//   'brown' : $mat-brown,  'gray' : $mat-gray, 'blue-gray' : $mat-blue-gray,
+// );
+$colors-mat: ('deep-purple' : $mat-deep-purple,
+'orange': $mat-orange, 
+'deep-orange': $mat-deep-orange,
+ 'brown': $mat-brown, 'gray': $mat-gray,
+  'blue-gray': $mat-blue-gray, 'red': $mat-red,
+   'purple': $mat-purple, 'indigo': $mat-indigo, 'blue': $mat-blue, 
+   'light-blue': $mat-light-blue, 'teal': $mat-teal, 'green': $mat-green, 
+   'light-green': $mat-light-green, 'lime': $mat-lime);
+@each $i,
+$l in $colors-mat {
+    .bg-#{$i} {
+        background-color: mat-color(mat-palette(map_get($colors-mat, $i), $primary)) !important;
+    }
+    .bgd-#{$i} {
+        background-color: mat-color(mat-palette(map_get($colors-mat, $i), $primary),900) !important;
+    }
+    .bgl-#{$i} {
+        background-color: mat-color(mat-palette(map_get($colors-mat, $i), $primary),lighter) !important;
+    }
+    .bg-#{$i}-accent {
+        background-color: mat-color(mat-palette(map_get($colors-mat, $i), $accent)) !important;
+    }
+    .clr-#{$i} {
+        color: mat-color(mat-palette(map_get($colors-mat, $i), $primary)) !important;
+    }
+    .clr-#{$i}-accent {
+        color: mat-color(mat-palette(map_get($colors-mat, $i), $accent)) !important;
+    }
+}
+
+.bg-black {
+    background-color: #000000 !important;
+}
+
+.bg-main {
+    background-color: #273568 !important;
+}
+
+.clr-main {
+    color: #273568 !important;
+}
+
+.grayish-background {
+    background-color: #f6f6f6 !important;
+}
+
+.bg-primary{
+ background: mat-color($borrocracy-primary, 500);
+}
+
+.bg-accent{
+ background: mat-color($borrocracy-accent, A400);
+}
+.clr-primary{
+ color: mat-color($borrocracy-primary, 500);
+}
+
+.clr-accent{
+ color: mat-color($borrocracy-accent, A400);
+}
+
+$sizes-new: () !default;
+
+$sizes-new: map-merge(
+  (
+    10: 10%,
+    20: 20%,
+    30: 30%,
+    40: 40%,
+    60: 60%,
+    70: 70%,
+    80: 80%,
+  ),
+  $sizes-new
+);
+$sizes-vp: () !default;
+
+$sizes-vp: map-merge(
+  (
+    10: 10,
+    20: 20,
+    30: 30,
+    40: 40,
+    60: 60,
+    70: 70,
+    80: 80,
+    100: 100,
+  ),
+  $sizes-vp
+);
+@each $prop, $abbrev in (width: w, height: h) {
+  @each $size, $length in $sizes-new {
+    .#{$abbrev}-#{$size} { #{$prop}: $length !important; }
+  }
+}
+@each $prop, $abbrev in (width: vw, height: vh) {
+  @each $size, $length in $sizes-vp {
+    .#{$abbrev}m-#{$size} { min-#{$prop}: #{$length}#{$abbrev} !important; }
+  }
+}

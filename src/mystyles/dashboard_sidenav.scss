@@ -1,0 +1,64 @@
+@import "../styles";
+
+.example-container {
+  position: relative;
+  margin-top:50px;
+}
+.example-container .mat-table {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+
+.sidenav-container {
+  width: 100%;
+  height: 99vh;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+
+.sidenav-content {
+  display: flex;
+  height: 100%;
+  width: auto;
+  flex-direction: column;
+
+}
+
+
+
+.sidenav-drawer {
+  padding: 20px;
+  background: mat-color($borrocracy-primary,600);
+  width: 150px;
+
+
+@include media-breakpoint-up(md){
+  width: 200px;
+
+  }
+
+@include media-breakpoint-up(lg){
+  width: 250px;
+  }
+
+
+}
+
+
+.menu-side-nav{
+  position: absolute;
+  font-weight: 600;
+  right: 5px;
+  top: 5px;
+  z-index: 10;
+}
+
+.menu-in-nav{
+  position: absolute;
+  font-weight: 600;
+  left: 5px;
+  top: 5px;
+  z-index: 10;
+}
+
