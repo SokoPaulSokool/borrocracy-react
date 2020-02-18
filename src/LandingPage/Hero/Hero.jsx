@@ -18,6 +18,11 @@ export default class Hero extends Component {
   state = {
     showPhone: 'hide-input',
     showCode: 'hide-input',
+    showCapture: 'show-input',
+    phoneNumber: '',
+    verificationCode: '',
+    capture: {},
+    recaptureDone: false
   };
   componentDidMount() {
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
@@ -26,9 +31,12 @@ export default class Hero extends Component {
         size: 'small',
         callback: res => {
           if (res) {
-            this.setState({ showPhone: 'show-input' });
+            this.setState({
+              showPhone: 'show-input',
+              showCapture: 'hide-input'
+            });
           }
-          return "tess"
+          return 'tess';
         },
         'expired-callback': () => {
           // Response expired. Ask user to solve reCAPTCHA again.
@@ -36,7 +44,6 @@ export default class Hero extends Component {
         }
       }
     );
-
     window.recaptchaVerifier
       .render()
       .then(res => {
@@ -48,7 +55,51 @@ export default class Hero extends Component {
       .catch(err => {
         console.log(err);
       });
+
+    this.setState({ capture: window.recaptchaVerifier });
   }
+
+  getInputData = e => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
+
+  logInSubmit = e => {
+    e.preventDefault();
+    const { phoneNumber, capture } = this.state;
+    const appVerifier = capture;
+    firebase
+      .auth()
+      .signInWithPhoneNumber(phoneNumber, appVerifier)
+      .then(confirmResult => {
+        // success
+       
+        this.setState({
+          confirmResult,
+          showCode: 'show-input',
+          showPhone: 'hide-input'
+        });
+      })
+      .catch(error => {
+        // error
+      });
+  };
+
+  verifySubmit = e => {
+    e.preventDefault();
+    const { confirmResult, verificationCode } = this.state;
+    if ((confirmResult, verificationCode)) {
+      confirmResult
+        .confirm(verificationCode)
+        .then(result => {
+          const { uid, refreshToken } = result.user.toJSON();
+          console.log(uid);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
+  };
   render() {
     return (
       <MDBView className="hero">
@@ -79,22 +130,45 @@ export default class Hero extends Component {
                     <h3 className="dark-grey-text text-center">
                       <strong>Let us connect you to lenders</strong>
                     </h3>
-                    <div id="recaptcha-container"></div>
+                    <div
+                      className={this.state.showCapture}
+                      id="recaptcha-container"
+                    ></div>
                     <hr />
                     <div className={this.state.showPhone}>
-                      <MDBInput label="Phone number" icon="phone" />
-                    </div>    
-                     <div className={this.state.showCode}>
-                      <MDBInput label="Verification Code"  />
+                      <MDBInput
+                        onChange={this.getInputData}
+                        label="Phone number"
+                        icon="phone"
+                        name="phoneNumber"
+                      />
+                    </div>
+                    <div className={this.state.showCode}>
+                      <MDBInput
+                        onChange={this.getInputData}
+                        label="Verification Code"
+                        name="verificationCode"
+                      />
                     </div>
 
-
-                    <div className={" text-center mt-3 black-text "+ this.state?.showPhone} >
-                      <MDBBtn color="primary">Login</MDBBtn>
+                    <div
+                      className={
+                        ' text-center mt-3 black-text ' + this.state?.showPhone
+                      }
+                    >
+                      <MDBBtn onClick={this.logInSubmit} color="primary">
+                        Login
+                      </MDBBtn>
                       <hr />
                     </div>
-                     <div className={" text-center mt-3 black-text "+ this.state?.showCode}>
-                      <MDBBtn color="primary">Verify</MDBBtn>
+                    <div
+                      className={
+                        ' text-center mt-3 black-text ' + this.state?.showCode
+                      }
+                    >
+                      <MDBBtn onClick={this.verifySubmit} color="primary">
+                        Verify
+                      </MDBBtn>
                       <hr />
                     </div>
                   </MDBCardBody>
