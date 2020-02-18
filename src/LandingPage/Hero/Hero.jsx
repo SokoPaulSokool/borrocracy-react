@@ -7,14 +7,51 @@ import {
   MDBBtn,
   MDBView,
   MDBCard,
-  MDBCardBody
+  MDBCardBody,
+  MDBInput
 } from 'mdbreact';
 import './Hero.scss';
+import firebase from 'firebase';
+import 'firebase/auth';
 
 export default class Hero extends Component {
+  state = {
+    showPhone: 'hide-input',
+    showCode: 'hide-input',
+  };
+  componentDidMount() {
+    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+      'recaptcha-container',
+      {
+        size: 'small',
+        callback: res => {
+          if (res) {
+            this.setState({ showPhone: 'show-input' });
+          }
+          return "tess"
+        },
+        'expired-callback': () => {
+          // Response expired. Ask user to solve reCAPTCHA again.
+          // ...
+        }
+      }
+    );
+
+    window.recaptchaVerifier
+      .render()
+      .then(res => {
+        console.log(res);
+        if (res) {
+          // this.setState({ showPhone: 'show-input' });
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
   render() {
     return (
-      <MDBView>
+      <MDBView className="hero">
         <MDBMask
           className="d-flex justify-content-center align-items-center"
           overlay="indigo-strong"
@@ -36,18 +73,29 @@ export default class Hero extends Component {
                   <hr />
                 </div>
               </div>
-              <MDBCol md="6" xl="5" className="mb-4">
+              <MDBCol md="6" xl="5" className="mb-4 auth-card">
                 <MDBCard className="dark-grey-text">
                   <MDBCardBody className="z-depth-2">
                     <h3 className="dark-grey-text text-center">
                       <strong>Let us connect you to lenders</strong>
                     </h3>
+                    <div id="recaptcha-container"></div>
                     <hr />
-                  
-                    <div className="text-center mt-3 black-text">
+                    <div className={this.state.showPhone}>
+                      <MDBInput label="Phone number" icon="phone" />
+                    </div>    
+                     <div className={this.state.showCode}>
+                      <MDBInput label="Verification Code"  />
+                    </div>
+
+
+                    <div className={" text-center mt-3 black-text "+ this.state?.showPhone} >
                       <MDBBtn color="primary">Login</MDBBtn>
                       <hr />
-              
+                    </div>
+                     <div className={" text-center mt-3 black-text "+ this.state?.showCode}>
+                      <MDBBtn color="primary">Verify</MDBBtn>
+                      <hr />
                     </div>
                   </MDBCardBody>
                 </MDBCard>

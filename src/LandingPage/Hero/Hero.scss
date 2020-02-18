@@ -18,6 +18,15 @@ $font-stack-noto-serif: "Noto Serif", serif;
 .hero {
   display: flex;
 
+  .auth-card{
+   .show-input{
+    display: block;
+   }
+   .hide-input{
+    display: none;
+   }
+  }
+
   &-text {
     height: 30%;
     width: 100%;
