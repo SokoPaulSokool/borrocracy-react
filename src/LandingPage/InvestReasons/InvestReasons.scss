@@ -1,0 +1,87 @@
+@import "../../mystyles/mixinsCollection/juice/juice";
+// @import url(https://fonts.googleapis.com/css?family=Asap:400,400i,600,700&display=swap);
+// @import url(https://fonts.googleapis.com/css?family=BenchNine&display=swap);
+// @import url(https://fonts.googleapis.com/css?family=Montserrat+Alternates:100,200,200i,400,500, 500i,700,900&display=swap);
+// @import url(https://fonts.googleapis.com/css?family=Gothic+A1:100,200,300,400,500,600,700,800,900&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Noto+Serif:400,800&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap);
+
+$primary-background: #003a78;
+$primary-secondary: #ff9800;
+$primary-accent: #eeff41;
+$mid-bp: 767px;
+// $mid-bp: small;
+// $font-stack: 'Asap', sans-serif;
+// $font-stack: 'BenchNine', sans-serif;
+// $font-stack: 'Montserrat Alternates', sans-serif;
+
+// $font-stack: "Gothic A1", sans-serif;
+$font-stack: "Montserrat", sans-serif;
+$font-stack-noto-serif: "Noto Serif", serif;
+
+.fifth-view {
+ p{
+  text-align: start;
+ }
+  h1 {
+    color: $primary-background;
+  }
+  .squares-group {
+    ul {
+      margin-left: 20px;
+      position: relative;
+      height: 300px;
+      margin: 0 auto;
+
+      .squares {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border: 10px solid;
+        transition: all 0.4s;
+        background: white;
+        &:hover {
+          transform: scale(5);
+          background: #7baee4;
+        }
+        @include bp(max, $mid-bp) {
+          width: 160px;
+          height: 160px;
+        }
+      }
+
+      li {
+        &:nth-child(1) {
+          border-color: $primary-background;
+          transform: rotateZ(50deg);
+          animation-name: squareAnimation1;
+          animation-duration: 5s;
+          animation-iteration-count: infinite;
+          animation-direction: alternate-reverse;
+          animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        &:nth-child(2) {
+          border-color: $primary-secondary;
+          transform: translateY(50px) rotateZ(50deg);
+          animation-name: squareAnimation2;
+          animation-duration: 3s;
+          animation-iteration-count: infinite;
+          animation-direction: alternate-reverse;
+          animation-delay: 0.5s;
+          animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        &:nth-child(3) {
+          border-color: $primary-background;
+          transform: translateY(100px) rotateZ(50deg);
+          animation-name: squareAnimation3;
+          animation-duration: 6s;
+          animation-iteration-count: infinite;
+          animation-direction: alternate-reverse;
+          animation-delay: 0.3s;
+          animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+      }
+    }
+  }
+}

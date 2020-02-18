@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import "./InvestReasons.scss";
 
 export default function InvestReasons() {
  return (
@@ -38,7 +39,7 @@ export default function InvestReasons() {
                   </p>
                 </li>
                 <li className="row m-0 my-4">
-                  <i className="fa fa-money fa-2x deep-purple-text mr-2"></i>
+                  <i className="fa fa-money-bill fa-2x deep-purple-text mr-2"></i>
                   <h5>Security</h5>
                   <p>
                     The scoring system's main focus is to provide lenders with

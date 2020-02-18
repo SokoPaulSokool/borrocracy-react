@@ -24,7 +24,7 @@ export default function Summary() {
             <div className=" col-md-3 col-sm-8 col-11 my-3 cards text-center">
               <div className="card card__front w-100 text-center ">
                 <div className=" bg-white text-center">
-                  <i className="fa fa-area-chart fa-3x red-text"></i>
+                  <i className="fa fa-chart-area fa-3x red-text"></i>
                   <h5 className=" mt-3">Integrity</h5>
                 </div>
                 <div className="read-more">Read</div>
@@ -60,7 +60,7 @@ export default function Summary() {
             <div className="col-md-3 col-sm-8 col-11 my-3  cards">
               <div className="card card__front">
                 <div className=" bg-white text-center">
-                  <i className="fa fa-comments-o fa-3x orange-text"></i>
+                  <i className="fa fa-comments-dollar fa-3x orange-text"></i>
                   <h5 className=" mt-3">Quality</h5>
                 </div>
                 <div className="read-more">Read</div>

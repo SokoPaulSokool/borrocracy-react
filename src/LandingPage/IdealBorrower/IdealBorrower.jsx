@@ -1,5 +1,5 @@
 import React from 'react'
-
+import handShake from "../../assets/images/hand_shake-01.svg";
 export default function IdealBorrower() {
  return (
    <section className="full-view text-center fourth-view  container-fluid  p-0 items-group position-relative">
@@ -14,7 +14,7 @@ export default function IdealBorrower() {
               </ul>
             </div>
             <div className="col-md-6 col-12  my-1">
-              <img className="hand-shake" alt="" />
+              <img src={handShake} className="hand-shake" alt="" />
               <p>
                 Our distinctive approach to our online credit scoring model
                 looks at number of fundamental factors when being considered for

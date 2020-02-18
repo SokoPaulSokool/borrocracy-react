@@ -1,10 +1,12 @@
 import React from 'react'
+import "./HowItWorks.scss";
+import koolCurve from "../../assets/images/kool-curve-01.svg";
 
 export default function HowItWorks() {
  return (
   <section className="full-view third-view items-group  container-fluid  p-0 position-relative">
           <div className="strip"></div>
-          <img className="back-img" alt="" />
+          <img src={koolCurve} className="back-img" alt="" />
           <div className="all row  ">
             <h2 className="col-12 col-md-8 text-center mb-3">
               How Borrocracy Works

@@ -1,0 +1,135 @@
+@import "../../mystyles/mixinsCollection/juice/juice";
+@import url(https://fonts.googleapis.com/css?family=Noto+Serif:400,800&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap);
+
+$primary-background: #003a78;
+$primary-secondary: #ff9800;
+$primary-accent: #eeff41;
+$mid-bp: 767px;
+// $mid-bp: small;
+// $font-stack: 'Asap', sans-serif;
+// $font-stack: 'BenchNine', sans-serif;
+// $font-stack: 'Montserrat Alternates', sans-serif;
+
+// $font-stack: "Gothic A1", sans-serif;
+$font-stack: "Montserrat", sans-serif;
+$font-stack-noto-serif: "Noto Serif", serif;
+
+.hero {
+  display: flex;
+
+  &-text {
+    height: 30%;
+    width: 100%;
+    align-self: center;
+    color: $primary-background;
+    color: $primary-accent;
+    position: relative;
+    display: block;
+    .main-heading {
+      width: 100%;
+      // height: 220px;
+      h1 {
+        font-size: 10em;
+        line-height: 1em;
+        // position: absolute;
+        // text-shadow: 0 10px 5px rgba(0,0,0,0.3);
+        transition: all 0.2s ease-in-out;
+        transform: scale(1);
+
+        &:nth-child(1) {
+          font-size: 2.5em;
+          line-height: 0.8em;
+          text-indent: 0.2em;
+          font-weight: lighter;
+        }
+        &:nth-child(2) {
+          text-shadow: 0 10px 5px rgba(0, 0, 0, 0.3);
+          // font-family: $font-stack-noto-serif;
+        }
+        &:hover {
+          &:nth-child(2) {
+            transform: scale(0.99);
+            text-shadow: 0 10px 5px rgba(0, 0, 0, 0);
+          }
+        }
+        @include bp(max, $mid-bp) {
+          font-size: 3.5em;
+        }
+      }
+    }
+
+    h1 {
+      font-size: 70px;
+    }
+    p {
+      color: #343638;
+      color: #ffffff;
+      font-style: oblique;
+      font-weight: 400;
+      line-height: 0.6em;
+    }
+  }
+  &-image {
+    width: 50%;
+    height: 60%;
+    position: relative;
+    background: url("../../assets/images/hero_image-01.svg");
+    img {
+      object-fit: contain;
+      height: 100%;
+      width: 100%;
+    }
+    @include bp(max, $mid-bp) {
+      height: 70%;
+      width: 90%;
+      z-index: -1;
+      img {
+        position: absolute;
+        right: 10px;
+      }
+    }
+  }
+  &-auth {
+    position: absolute;
+    border-radius: 10px;
+    width: 50%;
+    min-height: 30%;
+    bottom: 1%;
+    right: 1%;
+
+    p {
+      color: white;
+    }
+    .container {
+      height: 100%;
+      position: relative;
+      background-color: $primary-background;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+    .g-play {
+      width: 100%;
+      height: 40%;
+      object-fit: contain;
+      display: flex;
+      img {
+        object-fit: contain;
+        // height: 100px;
+        cursor: pointer;
+      }
+
+      @include bp(max, $mid-bp) {
+        img {
+          // height: 100%;
+        }
+      }
+    }
+
+    @include bp(max, $mid-bp) {
+      width: 90%;
+      min-height: 50%;
+    }
+  }
+}
