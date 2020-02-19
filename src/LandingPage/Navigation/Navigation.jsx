@@ -24,7 +24,7 @@ export default function Navigation({ click, isOpen }) {
               <MDBNavLink to="#">Lend</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="#">Borrow</MDBNavLink>
+              <MDBNavLink to="borrow">Borrow</MDBNavLink>
             </MDBNavItem>
           </MDBNavbarNav>
         </MDBCollapse>

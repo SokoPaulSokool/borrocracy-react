@@ -94,6 +94,7 @@ export default class Hero extends Component {
         .then(result => {
           const { uid, refreshToken } = result.user.toJSON();
           console.log(uid);
+          localStorage.setItem("userId",uid);
         })
         .catch(error => {
           console.log(error);

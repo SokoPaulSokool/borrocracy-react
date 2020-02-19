@@ -1,0 +1,36 @@
+.my-circle {
+  width: 40vw;
+  margin: 0 auto;
+
+
+}
+
+.scale{
+ display: flex;
+ width: 100%;
+ align-items: center;
+ justify-content: center;
+}
+.scale-item {
+  width: 10px;
+  min-height: 10px;
+}
+  .very-high-score-color {
+    background-color: #4caf50;
+  }
+
+  .high-score-color {
+    background-color: #8bc34a;
+  }
+
+  .medium-score-color {
+    background-color: #ffeb3b;
+  }
+
+  .low-score-color {
+    background-color: #ff9800;
+  }
+
+  .very-low-score-color {
+    background-color: #ff9800;
+  }
