@@ -1,20 +1,30 @@
-.my-circle {
-  width: 40vw;
-  margin: 0 auto;
+.borrower {
+  height: 100vh !important;
+  overflow-y: hidden;
+   background-color: #0c0d0e;
+   background-color: #fafafa;
 
+  .my-circle {
+    width: 25vw;
+    margin: 40px auto;
+  }
 
-}
+  .details-body {
+    padding-left: 66px;
+    overflow-y: scroll;
+   
+  }
 
-.scale{
- display: flex;
- width: 100%;
- align-items: center;
- justify-content: center;
-}
-.scale-item {
-  width: 10px;
-  min-height: 10px;
-}
+  .scale {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .scale-item {
+    width: 10px;
+    min-height: 10px;
+  }
   .very-high-score-color {
     background-color: #4caf50;
   }
@@ -34,3 +44,16 @@
   .very-low-score-color {
     background-color: #ff9800;
   }
+
+  .bgl-gray {
+    background: whitesmoke;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .sidenav---sidenav---_2tBP {
+    height: 100vh !important;
+  }
+}
